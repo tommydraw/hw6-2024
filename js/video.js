@@ -12,7 +12,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	video.play();
 	console.log("Play Video");
 	// update volume information
-
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
 
 // pause button
@@ -36,6 +36,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 // skip button
 document.querySelector("#skip").addEventListener("click", function() {
 	let time = video.currentTime + 10;
+	console.log("Skip ahead");
 	if (time >= video.duration) {
 		video.currentTime = 0;
 		console.log(video.currentTime);
